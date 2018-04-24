@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Mercator Perú</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile.theme-1.4.5.min.css">
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/consulta.js"></script>
+    
+    <style type="text/css">
+	#myPopup {
+		overflow:hidden;
+	}
+	</style>
+</head>
+
+<body >
+
+
+<div data-role="page" class="fondo">
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1 id="tituloEmpresa">Recepción de BL</h1>
+	</div><!-- /header -->
+
+	<div id="contentProgramaciones" role="main" class="ui-content" style="padding:0px;">
+    
+    
+    <div id="panelTabs" data-role="tabs">
+        <div data-role="navbar">
+            <ul>
+                <li class="ui-tabs-active ui-state-active"><a class="ui-btn-active" href="#one" data-theme="a" style="font-size:16px;">Programación</a></li>
+                <li><a href="#two" data-theme="a" style="font-size:16px;">Filtros</a></li>
+           </ul>
+        </div>
+        <div id="one" class="ui-content ui-body ui-body-a">
+        
+        	 <form class="ui-filterable"><input id="rich-autocomplete-input" data-type="search" placeholder="Buscar..."></form>
+            <ul id="listProgramacion" data-role="listview" data-filter="true" data-inset="true" data-input="#rich-autocomplete-input">
+            </ul>
+        	
+        </div>
+        <div id="two" class="ui-content ui-body ui-body-a">
+        
+	 <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Tipo Busqueda:</legend>
+        <input type="radio" name="tipo" id="tipoa" value="1" checked="checked">
+        <label for="tipoa">BL Master</label>
+        <input type="radio" name="tipo" id="tipob" value="0">
+        <label for="tipob">BL Hijo</label>
+        <input type="radio" name="tipo" id="tipoc" value="2">
+        <label for="tipoc">Ambos</label>
+    </fieldset>
+    
+     <fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>Visto Bueno ONLINE:</legend>
+    <input type="radio" name="visto" id="radio-visto-h-2a" value="1"   checked="checked">
+    <label for="radio-visto-h-2a">SI</label>
+    <input type="radio" name="visto" id="radio-visto-h-2b" value="0">
+    <label for="radio-visto-h-2b">NO</label> 
+	</fieldset> 
+       
+    <label for="cheque">BL:</label>
+    <input type="text" name="bl" id="bl" />
+    
+    <label for="cheque">Agente Aduana:</label>
+    <input type="text" name="agente" id="agente" />
+    
+    <label for="cheque">Cliente:</label>
+    <input type="text" name="cliente" id="cliente" />
+    
+    <label for="cheque">Nave/Viaje:</label>
+    <input type="text" name="nave" id="nave" />	 
+    
+    
+     <fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>BL(s) con desglose:</legend>
+    <input type="radio" name="desglose" id="radio-choice-h-2a" value="1" >
+    <label for="radio-choice-h-2a">SI</label>
+    <input type="radio" name="desglose" id="radio-choice-h-2b" value="0"  checked="checked">
+    <label for="radio-choice-h-2b">NO</label> 
+	</fieldset> 
+        	
+           
+            
+        </div>
+	</div>
+            
+            
+    
+
+        
+    
+    
+  
+      
+         
+        
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar" data-iconpos="top">
+		<ul>
+			
+            <!--<li><a id="guardar" data-position-to="window" data-icon="check">Guardar</a></li>-->
+            <li><a id="actualizar" data-icon="refresh">Buscar</a></li>
+            <!--<li><a id="liberar" data-icon="delete">Liberar</a></li>-->
+            
+            <li><a onClick="sesionFromApp();" data-ajax="false" data-icon="delete">Salir</a></li>          	
+            
+			<!--	-->		 
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+</body>
+</html>
