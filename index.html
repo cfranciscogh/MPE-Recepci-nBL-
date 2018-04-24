@@ -90,7 +90,14 @@
     function onFail(message) {
       alert('Failed because: ' + message);
     }
+	
+	$('#btnFoto').click(function (e) { e.preventDefault(); sendImage("camera"); });
+	
+	function sendImage(src) {
 
+    src = (src == 'library') ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA;
+    navigator.camera.getPicture(success, fail, {quality: 45, sourceType: src});
+	}
     </script>
   </head>
   <body>
@@ -100,5 +107,8 @@
     <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
     <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
+    
+    
+     <a id="btnFoto"  data-position-to="window" data-icon="plus" data-inline="true" data-corners="true" data-shadow="true"   data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-left ui-icon-plus"> Tomar Foto </a>
   </body>
 </html>
