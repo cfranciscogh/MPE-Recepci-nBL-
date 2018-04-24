@@ -66,6 +66,7 @@
       // Take picture using device camera and retrieve image as base64-encoded string
 	  console.log("Entro a la camara");
 	  console.log(navigator.camera);
+	  alert(navigator.camera);
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
         destinationType: destinationType.DATA_URL });
     }
